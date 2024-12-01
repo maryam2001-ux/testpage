@@ -1,0 +1,453 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  text-transform: capitalize;
+
+}
+
+::selection {
+  background-color: #000000;
+  color: aliceblue;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  
+}
+
+.container {
+  padding-inline:15px ;
+  margin-inline: auto;
+}
+
+/* header starts */
+
+header .container{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 30px;
+
+}
+
+header img{
+  width: 70px;
+}
+
+.menu-icon {
+position: relative;
+}
+
+.navlist ul {
+position: absolute;
+right: 0; top: 40px;
+min-width: 200px;
+background-color:grey;
+display: none;
+
+}      /*  هتكون ابن للمنيو  */
+
+.navlist ul li a{
+
+  color:whitesmoke;
+  font-size: 1.2rem;
+  display: block;  /* لاوم نعملها الاول عشان ندي المسافات */
+  padding: 15px;
+  text-align: center;
+  transition: all 0.5s ease-in-out; 
+  }
+
+  .navlist ul li a:hover{
+    color:black;
+    padding-top: 10px;
+    }
+  
+
+.navlist ul li:not(:last-child){
+  border-bottom: 1px solid whitesmoke;  
+  }
+    
+.navlist .menu-icon:hover ul {
+    display: block;
+
+  }  
+
+.navlist ul::before{
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent grey transparent;
+  position: absolute; right: 0; top: -18px;
+}
+
+
+/* header ends */
+
+
+/* main starts */
+
+.main-section {
+  background-image:url(../images/home.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+}
+
+.main-text {
+  position: absolute;
+  top: 50%;right:50%;
+  transform: translate(50%,50%);
+  width: 450px;
+  max-width: 100%;
+ }
+
+.main-text h1 {
+font-size: 4.5rem;
+margin-block-end: 20px;
+color:aliceblue;
+text-shadow:1px 2px 1px #000000 ;
+
+}
+
+.main-text p {
+  font-size: 1.5rem;
+  color:aliceblue;
+  text-shadow:1px 2px 1px #000000 ;
+  }
+
+/* main ends */
+
+/* feature start */
+
+.feature-section {
+  background-color:rgb(243, 241, 241);
+}
+
+.feature-box {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-box .box{ 
+  margin-block: 70px;
+  max-width: 100%;
+  width: 500px;
+  text-align: center;
+
+}
+
+.feature-box .box i{ 
+
+  font-size: 40px;
+  color: cadetblue;
+  margin-block-end: 25px;
+}
+
+.feature-box .box h3{ 
+
+  font-size: 1.5rem;
+  text-shadow: 1px 2px 1px #000000;
+  color: cadetblue;
+  margin-block-end: 20px;
+}
+
+.feature-box .box p{ 
+
+  font-size: 1.2rem;
+
+}
+
+
+/* feature ends */
+
+.special-heading {
+  color: aliceblue;
+  text-shadow: 1px 1px 1px #000000;
+  font-size: 8rem;
+  text-align: center;
+  font-weight: 900;
+  margin: 0;
+}
+
+.special-heading + p{
+margin: -40px 0 0;
+font-size: 20px;
+text-align: center;
+color: cadetblue;
+}
+
+@media (max-width: 768px) {
+  
+  .special-heading {
+    font-size: 4rem;
+  }
+  .special-heading + p{
+    margin: -20px 0 0;
+  
+    }
+    
+
+}
+
+
+/* services starts */
+
+.services-section {
+  margin-block-start: 100px;
+}
+
+.services-items {
+  margin-block: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.service-item-col i{
+font-size: 40px;
+color: cadetblue;
+position:absolute;
+left: -45px;top: -2px;
+}
+
+
+.service-item-col h3{
+  font-size: 1.5rem;
+  color: cadetblue;
+  margin-block-end: 20px;
+  }
+
+.service-item-col img {
+  width: 270px;height: 350px;
+}
+
+.service-item-col .box{
+margin-block-end: 50px;
+position: relative;
+  }
+
+
+/* services ends */
+
+@media (max-width: 1020px) {
+  
+  .services-items {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+  }
+  
+  .service-item-col i{
+    
+    position:absolute;
+    left: 48%;top: -40px;
+    }
+
+
+}
+
+
+
+/* portfolio starts */
+
+.portfolio-section{
+  margin-block-start: 100px;
+  background-color:rgb(243, 241, 241);
+  padding-block-end: 20px;
+}
+
+.portfolio-section .portfolio-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+  grid-gap: 1.5rem;
+  margin-top: 80px;
+}
+
+.portfolio-section .portfolio-content .card{
+  background-color: white;
+}
+
+.portfolio-section .portfolio-content img{
+  max-width: 100%;
+}
+
+.portfolio-section .portfolio-content .info h3 {
+  margin-block: 20px;
+  padding-inline: 10px;
+}
+
+.portfolio-section .portfolio-content .info p {
+  margin-block-end: 20px;
+  padding-inline: 10px;
+}
+
+
+  
+
+
+/* portfolio ends */
+
+/* about starts */
+
+.about-section .container{
+  margin-block: 70px;
+}
+
+.about-content {
+  margin-block-start: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.about-img  {
+  width: 500px;
+  height: 320px;
+  position: relative;
+}
+
+.about-img img {
+  max-width: 100%;
+}
+
+.info .line {
+  width: 350px;
+  height: 2px; 
+  border: 10px;
+  background:rgb(131, 196, 34);
+  margin: auto;
+}
+
+.about-content .info {
+  flex: 1;
+  padding-inline: 50px;
+}
+
+.info p {
+  margin-block: 40px;
+}
+
+.info p:first-child {
+  font-weight: bold;
+}
+
+.info p:last-child {
+  font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+  .about-img {
+    margin: auto;
+  }
+  
+  
+}
+
+/* about ends */
+
+/* contact starts */
+
+.contact-section{
+  background-color:rgb(243, 241, 241);
+
+}
+
+
+.contact-text{
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-text h4{
+  font-size: 2rem;
+  margin-block-end: 7px;
+
+}
+
+.contact-text a{
+  display: block;
+  font-size: 1.5rem;
+  color: cadetblue;
+  margin-block-end: 10px;
+  font-weight: bolder;
+
+}
+
+.contact-text p{
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.contact-text i {
+  padding-inline: 5px;
+  color: cadetblue;
+  font-weight: bold;
+  
+}
+
+@media (max-width: 960px) {
+  .contact-text h4{
+    font-size: 1.1rem;
+  }
+
+  .contact-text i{
+    font-size: 0.8rem;
+  }
+  
+}
+
+/* contact ends */
+
+footer {
+  background-color: cadetblue;
+  color: aliceblue;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+footer h3 {
+  color: aliceblue;
+  
+}
+footer span
+{
+  color: red;
+  
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
